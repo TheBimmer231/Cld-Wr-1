@@ -4,6 +4,7 @@
 
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
+/*
 		#include "map_files\BigRed_v2\BigRed_v2.dmm"
 		#include "map_files\Debugdalus\TGS_Debugdalus.dmm"
 		#include "map_files\desertdam\desertdam.dmm"
@@ -22,6 +23,8 @@
 		#include "map_files\Twin_Pillars\Twin_Pillars.dmm"
 		#include "map_files\Minerva\TGS_Minerva.dmm"
 		#include "map_files\gelida_iv\gelida_iv.dmm"
+*/
+		#include "map_files\Murray_spc_wrfr\Cold-War-Mars-1.dmm"
 		#ifdef CIBUILDING
 			#include "templates.dm"
 		#endif

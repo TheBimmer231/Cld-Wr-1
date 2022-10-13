@@ -139,6 +139,10 @@
 	barefootstep = FOOTSTEP_SAND
 	shoefootstep = FOOTSTEP_SAND
 
+/turf/open/floor/plating/ground/mars/random/Initialize()
+	. = ..()
+	dir = pick(GLOB.alldirs)
+
 /turf/open/floor/plating/ground/mars/random/cave
 
 	name = "cave"
@@ -151,21 +155,27 @@
 	name = "cave"
 	icon_state = "mars_cave_rock"
 
-/turf/open/floor/plating/ground/mars/random/dirt
+/turf/open/floor/plating/ground/mars/random/tile
 	name = "dirt"
-	icon_state = "mars_dirt"
+	icon_state = "mars_tile"
 
-/turf/open/floor/plating/ground/mars/random/sand
-	name = "sand"
+/turf/open/floor/plating/ground/mars/random/dust
+	name = "dusty dirt"
+	icon_state = "mars_dirt"
+	var/dirt_color = "#b1503d"
+
+/turf/open/floor/plating/ground/mars/random/dust/sand
+	name = "dusty sand"
 	icon_state = "mars_sand"
 
-/turf/open/floor/plating/ground/mars/random/Initialize()
-	. = ..()
-	dir = pick(GLOB.alldirs)
+/turf/open/floor/plating/ground/mars/random/dust/dirt
+	name = "dusty dirt"
+	icon_state = "mars_dirt"
 
 /turf/open/floor/plating/ground/mars/dirttosand
 	name = "sand"
 	icon_state = "mars_dirt_to_sand"
+
 /turf/open/floor/plating/ground/mars/cavetodirt
 	name = "cave"
 	icon_state = "mars_cave_to_dirt"

@@ -24,6 +24,10 @@
 #define JOB_DISPLAY_ORDER_SUQAD_ENGINEER 22
 #define JOB_DISPLAY_ORDER_SQUAD_MARINE 23
 #define JOB_DISPLAY_ORDER_SURVIVOR 24
+#define JOB_DISPLAY_ORDER_USSR_SOLDIER          25
+#define JOB_DISPLAY_ORDER_NATSF_SOLDIER         26
+#define JOB_DISPLAY_ORDER_USSR_MEDIC          27
+#define JOB_DISPLAY_ORDER_NATSF_MEDIC         28
 
 #define JOB_FLAG_SPECIALNAME (1<<0)
 #define JOB_FLAG_LATEJOINABLE (1<<1) //Can this job be selected for prefs to join as?
@@ -84,6 +88,11 @@
 #define REBEL_SQUAD_MARINE "Rebel Squad Marine"
 #define REBEL_SQUAD_VATGROWN "Rebel Squad VatGrown"
 #define REBEL_SILICON_AI "Rebel AI"
+
+#define USSR_SOLDIER "USSR Soldier"
+#define NATSF_SOLDIER "NATSF Soldier"
+#define USSR_MEDIC "USSR Medic"
+#define NATSF_MEDIC "NATSF Medic"
 
 //SOM - very placeholder for now
 #define SOM_SQUAD_LEADER "SOM Squad Leader"

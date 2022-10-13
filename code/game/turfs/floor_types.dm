@@ -1025,3 +1025,11 @@
 /turf/open/floor/industrial
 	icon = 'icons/turf/industrial.dmi'
 	icon_state = "industrial"
+
+////// Cold war floors
+
+/turf/open/floor/martiantile
+	icon_state = "martian_tile"
+
+/turf/open/floor/martiansolars
+	icon_state = "martian_solar"

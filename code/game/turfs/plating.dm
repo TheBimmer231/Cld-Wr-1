@@ -102,7 +102,7 @@
 	layer = CATWALK_LAYER
 
 /turf/open/floor/plating/warning
-	icon_state = "warnplate"
+	icon_state = "warnplate_mars"
 
 /turf/open/floor/plating/warning/grime
 	icon_state = "floorgrimecaution"

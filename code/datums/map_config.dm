@@ -69,7 +69,7 @@
 			return
 		switch(maptype)
 			if(GROUND_MAP)
-				return LoadConfig("_maps/lv624.json", error_if_missing, maptype)
+				return LoadConfig("_maps/Murray_spc_wrfr.json.json", error_if_missing, maptype)
 			if(SHIP_MAP)
 				return LoadConfig("_maps/pillar_of_spring.json", error_if_missing, maptype)
 
