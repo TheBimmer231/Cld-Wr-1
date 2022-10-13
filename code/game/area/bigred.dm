@@ -5,6 +5,9 @@
 	icon_state = "red"
 	ceiling = CEILING_NONE
 	minimap_color = MINIMAP_AREA_COLONY
+	base_lighting_alpha = 200
+	luminosity = 1
+	requires_power = FALSE
 
 /area/bigredv2/outside/ne
 	name = "Northeast Colony Grounds"
@@ -49,6 +52,7 @@
 	outside = FALSE
 	ambience = list('sound/ambience/ambicave.ogg', 'sound/ambience/ambilava1.ogg', 'sound/ambience/ambilava2.ogg', 'sound/ambience/ambilava3.ogg')
 	minimap_color = MINIMAP_AREA_CAVES
+	base_lighting_alpha = 75
 
 /area/bigredv2/caves/rock
 	name = "Enclosed Area"
@@ -75,7 +79,7 @@
 /area/bigredv2/caves/secomplex
 	name = "Underground research complex"
 	icon_state = "yellow"
-	ceiling = CEILING_DEEP_UNDERGROUND_METAL	
+	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 
 /area/bigredv2/caves/east
 	name = "Eastern Caves"

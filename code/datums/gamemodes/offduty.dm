@@ -1,6 +1,6 @@
 /datum/game_mode/offduty
 	name = "Off-Duty"
-	config_tag = "Off-Duty"
+//	config_tag = "Off-Duty"
 	required_players = 0
 	votable = FALSE
 	var/operation_start_timer

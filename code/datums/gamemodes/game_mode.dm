@@ -52,6 +52,9 @@
 /datum/game_mode/proc/announce()
 	return TRUE
 
+//This only gets called by /mob/living and it's subtypes//
+/datum/game_mode/proc/on_mob_death(var/mob/living/M)
+	return
 
 /datum/game_mode/proc/can_start(bypass_checks = FALSE)
 	if(!(config_tag in SSmapping.configs[GROUND_MAP].gamemodes) && !bypass_checks)
