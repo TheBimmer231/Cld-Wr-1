@@ -616,7 +616,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		return
 	if(client && hud_used?.hud_version != HUD_STYLE_NOHUD)
 		client.screen += r_hand
-		r_hand.screen_loc = ui_rhand
+		r_hand.screen_loc = ui_c_rhand
 
 	overlays_standing[R_HAND_LAYER] = r_hand.make_worn_icon(species_type = species.name, inhands = TRUE, slot_name = slot_r_hand_str, default_icon = 'icons/mob/items_righthand_0.dmi', default_layer = R_HAND_LAYER)
 
@@ -630,7 +630,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 
 	if(client && hud_used?.hud_version != HUD_STYLE_NOHUD)
 		client.screen += l_hand
-		l_hand.screen_loc = ui_lhand
+		l_hand.screen_loc = ui_c_lhand
 
 	overlays_standing[L_HAND_LAYER] = l_hand.make_worn_icon(species_type = species.name, inhands = TRUE, slot_name = slot_l_hand_str, default_icon = 'icons/mob/items_lefthand_0.dmi', default_layer = L_HAND_LAYER)
 	apply_overlay(L_HAND_LAYER)

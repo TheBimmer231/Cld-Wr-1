@@ -94,9 +94,9 @@
 	var/hand_tag = "l"
 
 /obj/screen/inventory/hand/update_icon(active = FALSE)
-	cut_overlays()
+	icon_state = "hand_l"
 	if(active)
-		add_overlay("hand_active")
+		icon_state = "hand_l_active"
 
 /obj/screen/inventory/hand/Click()
 	if(world.time <= usr.next_move)
@@ -113,6 +113,11 @@
 	icon_state = "hand_r"
 	screen_loc = ui_rhand
 	hand_tag = "r"
+
+/obj/screen/inventory/hand/right/update_icon(active = FALSE)
+	icon_state = "hand_r"
+	if(active)
+		icon_state = "hand_r_active"
 
 /obj/screen/close
 	name = "close"
@@ -311,7 +316,7 @@
 
 	var/mob/living/L = usr
 	L.resist()
-
+	flick("act_resist_onclick", src)
 
 /obj/screen/storage
 	name = "storage"
@@ -391,6 +396,7 @@
 	var/obj/effect/overlay/zone_sel/overlay_object = hover_overlays_cache[choice]
 	if(!overlay_object)
 		overlay_object = new
+		overlay_object.icon = icon
 		overlay_object.icon_state = "[z_prefix][choice]"
 		hover_overlays_cache[choice] = overlay_object
 	vis_contents += overlay_object
@@ -403,6 +409,51 @@
 	layer = ABOVE_HUD_LAYER
 	plane = ABOVE_HUD_PLANE
 
+/obj/screen/zone_sel/proc/get_zone_at(icon_x, icon_y)
+	switch(icon_y)
+		if(4 to 7) //Feet
+			switch(icon_x)
+				if(7 to 12)
+					return BODY_ZONE_PRECISE_R_FOOT
+				if(21 to 26)
+					return BODY_ZONE_PRECISE_L_FOOT
+		if(8 to 25) //Legs
+			switch(icon_x)
+				if(9 to 15)
+					return BODY_ZONE_R_LEG
+				if(18 to 24)
+					return BODY_ZONE_L_LEG
+		if(26 to 30) //Hands and groin
+			switch(icon_x)
+				if(5 to 10)
+					return BODY_ZONE_PRECISE_R_HAND
+				if(11 to 22)
+					return BODY_ZONE_PRECISE_GROIN
+				if(24 to 28)
+					return BODY_ZONE_PRECISE_L_HAND
+		if(31 to 47) //Chest and arms to shoulders
+			switch(icon_x)
+				if(5 to 10)
+					return BODY_ZONE_R_ARM
+				if(11 to 22)
+					return BODY_ZONE_CHEST
+				if(23 to 28)
+					return BODY_ZONE_L_ARM
+		if(48 to 58) //Head, but we need to check for eye or mouth
+			if(icon_x in 12 to 21)
+				switch(icon_y)
+					if(49 to 50)
+						if(icon_x in 16 to 17)
+							return BODY_ZONE_PRECISE_MOUTH
+					if(53) //Eyeline, eyes are on 15 and 17
+						if(icon_x in 15 to 18)
+							return BODY_ZONE_PRECISE_EYES
+					if(52)
+						if(icon_x in 16 to 17)
+							return BODY_ZONE_PRECISE_EYES
+				return BODY_ZONE_HEAD
+
+/*
 /obj/screen/zone_sel/proc/get_zone_at(icon_x, icon_y)
 	switch(icon_y)
 		if(1 to 3) //Feet
@@ -446,7 +497,7 @@
 						if(icon_x in 15 to 17)
 							return BODY_ZONE_PRECISE_EYES
 				return BODY_ZONE_HEAD
-
+*/
 /obj/screen/zone_sel/proc/set_selected_zone(choice, mob/user)
 	if(isobserver(user))
 		return
@@ -458,7 +509,7 @@
 
 /obj/screen/zone_sel/update_icon(mob/user)
 	cut_overlays()
-	add_overlay(mutable_appearance('icons/mob/screen/zone_sel.dmi', "[z_prefix][selecting]"))
+	add_overlay(mutable_appearance(icon, "[z_prefix][selecting]"))
 	user.zone_selected = selecting
 
 /obj/screen/zone_sel/alien
@@ -658,15 +709,17 @@
 /obj/screen/toggle_inv
 	name = "toggle"
 	icon = 'icons/mob/screen/midnight.dmi'
-	icon_state = "toggle"
+	icon_state = "toggle_opened"
 	screen_loc = ui_inventory
 
 /obj/screen/toggle_inv/Click()
 	if(usr.hud_used.inventory_shown)
 		usr.hud_used.inventory_shown = FALSE
+		icon_state = "toggle"
 		usr.client.screen -= usr.hud_used.toggleable_inventory
 	else
 		usr.hud_used.inventory_shown = TRUE
+		icon_state = "toggle_opened"
 		usr.client.screen += usr.hud_used.toggleable_inventory
 
 	usr.hud_used.hidden_inventory_update()
@@ -674,7 +727,7 @@
 
 /obj/screen/ammo
 	name = "ammo"
-	icon = 'icons/mob/ammoHUD.dmi'
+	icon = 'icons/mob/ammo_count.dmi'
 	icon_state = "ammo"
 	screen_loc = ui_ammo1
 	var/warned = FALSE
@@ -708,7 +761,7 @@
 		remove_hud(user)
 		return
 
-	var/list/ammo_type = G.get_ammo_list()
+//	var/list/ammo_type = G.get_ammo_list()
 	var/rounds
 	if(G.max_rounds && G.rounds && CHECK_BITFIELD(G.flags_gun_features, GUN_AMMO_COUNT_BY_PERCENTAGE))
 		rounds = round((G.rounds / G.max_rounds) * 100)
@@ -716,12 +769,12 @@
 		rounds = round(G.rounds / G.rounds_per_shot)
 	else
 		rounds = G.rounds
-	var/hud_state = ammo_type[1]
-	var/hud_state_empty = ammo_type[2]
+//	var/hud_state = ammo_type[1]
+//	var/hud_state_empty = ammo_type[2]
 
 	overlays.Cut()
-
-	var/empty = image('icons/mob/ammoHUD.dmi', src, "[hud_state_empty]")
+/*
+	var/empty = image(icon, src, "[hud_state_empty]")
 
 	if(rounds == 0)
 		if(warned)
@@ -740,24 +793,24 @@
 	else
 		warned = FALSE
 		overlays += image('icons/mob/ammoHUD.dmi', src, "[hud_state]")
-
+*/
 	rounds = num2text(rounds)
 
 	//Handle the amount of rounds
 	switch(length(rounds))
 		if(1)
-			overlays += image('icons/mob/ammoHUD.dmi', src, "o[rounds[1]]")
+			overlays += image(icon, src, "o[rounds[1]]")
 		if(2)
-			overlays += image('icons/mob/ammoHUD.dmi', src, "o[rounds[2]]")
-			overlays += image('icons/mob/ammoHUD.dmi', src, "t[rounds[1]]")
+			overlays += image(icon, src, "o[rounds[2]]")
+			overlays += image(icon, src, "t[rounds[1]]")
 		if(3)
-			overlays += image('icons/mob/ammoHUD.dmi', src, "o[rounds[3]]")
-			overlays += image('icons/mob/ammoHUD.dmi', src, "t[rounds[2]]")
-			overlays += image('icons/mob/ammoHUD.dmi', src, "h[rounds[1]]")
+			overlays += image(icon, src, "o[rounds[3]]")
+			overlays += image(icon, src, "t[rounds[2]]")
+			overlays += image(icon, src, "h[rounds[1]]")
 		else //"0" is still length 1 so this means it's over 999
-			overlays += image('icons/mob/ammoHUD.dmi', src, "o9")
-			overlays += image('icons/mob/ammoHUD.dmi', src, "t9")
-			overlays += image('icons/mob/ammoHUD.dmi', src, "h9")
+			overlays += image(icon, src, "o9")
+			overlays += image(icon, src, "t9")
+			overlays += image(icon, src, "h9")
 
 /obj/screen/arrow
 	icon = 'icons/Marine/marine-items.dmi'
