@@ -17,6 +17,8 @@
 #define ORDER_HUD "human_order_hud" //shows what orders are applied to marines
 #define PAIN_HUD "pain_hud" //displays human pain / preceived health.
 #define ARMOR_SUNDER_HUD "armor_sunder_hud" //displays how much sunder has been applied.
+#define USSR_TEAM_HUD "ussr_team_hud" //used for effects such as the red/green overlays when using thermals goggles
+#define NATSF_TEAM_HUD "natsf_team_hud" //used for effects such as the red/green overlays when using thermals goggles
 #define XENO_REAGENT_HUD "xeno_reagent_hud" // displays sign based on reagent in human
 #define XENO_TACTICAL_HUD "xeno_tactical_hud" // displays xeno tactical elements such as tunnels and rally hive pings
 #define MACHINE_HEALTH_HUD "machine_health_hud" // displays machine health; part of /datum/atom_hud/squad
@@ -50,6 +52,8 @@
 #define DATA_HUD_SQUAD_SOM 15
 #define DATA_HUD_XENO_DEBUFF 16
 #define DATA_HUD_XENO_HEART 17
+#define DATA_HUD_USSR_TEAM 18
+#define DATA_HUD_NATSF_TEAM 19
 
 
 // Notification action types

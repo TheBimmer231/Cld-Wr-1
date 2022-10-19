@@ -5,119 +5,42 @@
 	return g
 
 /proc/get_limb_icon_name(datum/species/S, gender, limb_name, ethnicity)
-	if(S.name == "Human" || S.name == "Synthetic")
-		switch(limb_name)
-			if ("torso", "chest")
-				return "[ethnicity]_torso_[get_gender_name(gender)]"
+	switch(limb_name)
+		if ("right arm")
+			limb_name = "r_arm"
 
-			if ("head")
-				return "[ethnicity]_head_[get_gender_name(gender)]"
+		if ("left arm")
+			limb_name = "l_arm"
 
-			if ("groin")
-				return "[ethnicity]_groin_[get_gender_name(gender)]"
+		if ("right leg")
+			limb_name = "r_leg"
 
-			if ("r_arm", "right arm")
-				return "[ethnicity]_right_arm"
+		if ("left leg")
+			limb_name = "l_leg"
 
-			if ("l_arm", "left arm")
-				return "[ethnicity]_left_arm"
+		if ("right hand")
+			limb_name = "r_hand"
 
-			if ("r_leg", "right leg")
-				return "[ethnicity]_right_leg"
+		if ("left hand")
+			limb_name = "l_hand"
 
-			if ("l_leg", "left leg")
-				return "[ethnicity]_left_leg"
+		if ("right foot")
+			limb_name = "r_foot"
 
-			if ("r_hand", "right hand")
-				return "[ethnicity]_right_hand"
+		if ("left foot")
+			limb_name = "l_foot"
 
-			if ("l_hand", "left hand")
-				return "[ethnicity]_left_hand"
+	var/gendered = TRUE
+	if(limb_name in list("r_hand", "l_hand","r_foot","l_foot"))
+		gendered = FALSE
 
-			if ("r_foot", "right foot")
-				return "[ethnicity]_right_foot"
-
-			if ("l_foot", "left foot")
-				return "[ethnicity]_left_foot"
-
-			else
-				return null
-	else
-		switch(limb_name)
-			if ("torso")
-				return "[limb_name]_[get_gender_name(gender)]"
-
-			if ("chest")
-				return "[limb_name]_[get_gender_name(gender)]"
-
-			if ("head")
-				return "head_[get_gender_name(gender)]"
-
-			if ("groin")
-				return "[limb_name]_[get_gender_name(gender)]"
-
-			if ("r_arm")
-				return "[limb_name]"
-
-			if ("right arm")
-				return "r_arm"
-
-			if ("l_arm")
-				return "[limb_name]"
-
-			if ("left arm")
-				return "l_arm"
-
-			if ("r_leg")
-				return "[limb_name]"
-
-			if ("right leg")
-				return "r_leg"
-
-			if ("l_leg")
-				return "[limb_name]"
-
-			if ("left leg")
-				return "l_leg"
-
-			if ("r_hand")
-				return "[limb_name]"
-
-			if ("right hand")
-				return "r_hand"
-
-			if ("l_hand")
-				return "[limb_name]"
-
-			if ("left hand")
-				return "l_hand"
-
-			if ("r_foot")
-				return "[limb_name]"
-
-			if ("right foot")
-				return "r_foot"
-
-			if ("l_foot")
-				return "[limb_name]"
-
-			if ("left foot")
-				return "l_foot"
-			else
-				return null
+	if(gendered)
+		return "[limb_name]_[get_gender_name(gender)]"
+	return limb_name
 
 /mob/living/carbon/human/proc/set_limb_icons()
-	var/datum/ethnicity/E = GLOB.ethnicities_list[ethnicity]
-
-	var/e_icon
-
-	if (!E)
-		e_icon = "western"
-	else
-		e_icon = E.icon_name
-
 	for(var/datum/limb/L in limbs)
-		L.icon_name = get_limb_icon_name(species, gender, L.display_name, e_icon)
+		L.icon_name = get_limb_icon_name(species, gender, L.display_name)
 
 /mob/living/carbon/human/get_reagent_tags()
 	. = ..()

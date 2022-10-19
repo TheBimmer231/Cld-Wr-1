@@ -20,7 +20,6 @@
 	name = "USSR Soldier"
 	jobtype = /datum/job/ussr/soldier
 
-/*
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/marine
 	ears = /obj/item/radio/headset/kosmnaz
@@ -29,11 +28,10 @@
 	wear_suit = /obj/item/clothing/suit/space/soviet
 	gloves = /obj/item/clothing/gloves/marine/veteran/PMC/soviet
 	head = /obj/item/clothing/head/helmet/space/soviet
-	suit_store = /obj/item/weapon/gun/rifle/famas/ak40vm
+//	suit_store = /obj/item/weapon/gun/rifle/famas/ak40vm
 	l_store = /obj/item/storage/pouch/firstaid/coldwar/full
 	back = /obj/item/tank/jetpack/oxygen/combat
 	mask = /obj/item/clothing/mask/gas/soviet
-*/
 
 /datum/outfit/job/ussr/soldier/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
@@ -63,7 +61,6 @@
 	name = "USSR Medic"
 	jobtype = /datum/job/ussr/medic
 
-/*
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/marine
 	ears = /obj/item/radio/headset/kosmnaz
@@ -72,12 +69,11 @@
 	wear_suit = /obj/item/clothing/suit/space/soviet/light
 	gloves = /obj/item/clothing/gloves/marine/veteran/PMC/soviet
 	head = /obj/item/clothing/head/helmet/space/soviet/light
-	suit_store = /obj/item/weapon/gun/rifle/groza
+//	suit_store = /obj/item/weapon/gun/rifle/groza
 	l_store = /obj/item/storage/pouch/firstaid/coldmedic/full
 	r_store = /obj/item/storage/pouch/firstaid/coldmedic/full
 	back = /obj/item/tank/jetpack/oxygen/combat
 	mask = /obj/item/clothing/mask/gas/soviet
-*/
 
 /datum/outfit/job/ussr/medic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()

@@ -3,6 +3,11 @@
 	icon_state = "empdisable"
 	duration = 0.5 SECONDS
 
+/obj/effect/temp_visual/dir_setting/jetpack_poof
+	name = "jetpack exhaust"
+	icon_state = "extinguish"
+	duration = 10
+
 /obj/effect/temp_visual/explosion
 	name = "explosion"
 	icon = 'icons/effects/explosion.dmi'

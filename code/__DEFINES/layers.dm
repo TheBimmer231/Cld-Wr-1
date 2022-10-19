@@ -197,6 +197,8 @@
 #define BELOW_FULLSCREEN_LAYER 20.9 //blip from motion detector
 
 #define FULLSCREEN_LAYER 22
+#define FULLSCREEN_THERMALS_LAYER 22.001
+#define FULLSCREEN_NIGHT_VISION_LAYER 22.002
 #define FULLSCREEN_IMPAIRED_LAYER 22.02 //visual impairment from wearing welding helmet, etc
 #define FULLSCREEN_DRUGGY_LAYER 22.03
 #define FULLSCREEN_BLURRY_LAYER 22.04
