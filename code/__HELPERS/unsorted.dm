@@ -1275,3 +1275,22 @@ GLOBAL_LIST_INIT(survivor_outfits, typecacheof(/datum/outfit/job/survivor))
 			return FALSE
 		line_count ++
 	return TRUE
+
+/proc/reverse_direction(direction)
+	switch(direction)
+		if(NORTH)
+			return SOUTH
+		if(NORTHEAST)
+			return SOUTHWEST
+		if(EAST)
+			return WEST
+		if(SOUTHEAST)
+			return NORTHWEST
+		if(SOUTH)
+			return NORTH
+		if(SOUTHWEST)
+			return NORTHEAST
+		if(WEST)
+			return EAST
+		if(NORTHWEST)
+			return SOUTHEAST

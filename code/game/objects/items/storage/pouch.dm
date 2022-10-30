@@ -747,3 +747,51 @@
 /obj/item/storage/pouch/shotgun/som
 	desc = "A pouch specialized for holding shotgun ammo. Made with traditional SOM leather."
 	icon_state = "shotshells_som"
+
+//Cold war medical//
+
+/obj/item/storage/pouch/firstaid/coldwar
+	name = "KOSMNAZ first-aid pouch"
+	desc = "It can contain autoinjectors."
+	icon_state = "firstaid"
+	storage_slots = 2
+	can_hold = list(/obj/item/reagent_containers/hypospray/autoinjector)
+
+/obj/item/storage/pouch/firstaid/coldwar/full/Initialize()
+	. = ..()
+	new /obj/item/reagent_containers/hypospray/autoinjector/kosmnazstim (src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/kosmnazstim (src)
+
+/obj/item/storage/pouch/firstaid/coldwar/natsf
+	name = "NATSF first-aid pouch"
+	desc = "It can contain autoinjectors."
+
+/obj/item/storage/pouch/firstaid/coldwar/natsf/full/Initialize()
+	. = ..()
+	new /obj/item/reagent_containers/hypospray/autoinjector/natsfstim (src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/natsfstim (src)
+
+/obj/item/storage/pouch/firstaid/coldmedic
+	name = "KOSMNAZ medic pouch"
+	desc = "It can contain autoinjectors."
+	icon_state = "firstaid"
+	storage_slots = 4
+	can_hold = list(/obj/item/reagent_containers/hypospray/autoinjector)
+
+/obj/item/storage/pouch/firstaid/coldmedic/full/Initialize()
+	. = ..()
+	new /obj/item/reagent_containers/hypospray/autoinjector/kosmnazstim (src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/kosmnazstim (src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/komsnazcoag (src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/komsnazcoag (src)
+
+/obj/item/storage/pouch/firstaid/coldmedic/natsf
+	name = "NATSF medic pouch"
+	desc = "It can contain autoinjectors."
+
+/obj/item/storage/pouch/firstaid/coldmedic/natsf/full/Initialize()
+	. = ..()
+	new /obj/item/reagent_containers/hypospray/autoinjector/natsfstim (src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/natsfstim (src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/natsfcoag (src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/natsfcoag (src)

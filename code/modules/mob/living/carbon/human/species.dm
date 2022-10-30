@@ -320,7 +320,7 @@
 	name = "Human"
 	name_plural = "Humans"
 	unarmed_type = /datum/unarmed_attack/punch
-	species_flags = HAS_SKIN_TONE|HAS_LIPS|HAS_UNDERWEAR
+	species_flags = HAS_SKIN_TONE|HAS_LIPS|HAS_UNDERWEAR|NO_STAMINA
 	count_human = TRUE
 
 	screams = list(MALE = "male_scream", FEMALE = "female_scream")
@@ -828,7 +828,7 @@ GLOBAL_VAR_INIT(join_as_robot_allowed, TRUE)
 	var/has_m_intent = 1  // Set to draw move intent box.
 	var/has_warnings = 1  // Set to draw environment warnings.
 	var/has_pressure = 1  // Draw the pressure indicator.
-	var/has_nutrition = 1 // Draw the nutrition indicator.
+	var/has_nutrition = 0 // Draw the nutrition indicator.
 	var/has_bodytemp = 1  // Draw the bodytemp indicator.
 	var/has_hands = 1     // Set to draw shand.
 	var/has_drop = 1      // Set to draw drop button.

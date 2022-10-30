@@ -508,6 +508,26 @@
 					holder.icon_state = "hudreleased"
 					break
 
+/datum/atom_hud/team/ussr
+	hud_icons = list(USSR_TEAM_HUD)
+
+/datum/atom_hud/team/natsf
+	hud_icons = list(NATSF_TEAM_HUD)
+
+/mob/living/carbon/human/proc/setup_team_huds()
+	var/image/ussr_team_hud = hud_list[USSR_TEAM_HUD]
+	if(istype(job, /datum/job/ussr))
+		ussr_team_hud.icon_state = "ally"
+	else
+		ussr_team_hud.icon_state = "enemy"
+	hud_list[USSR_TEAM_HUD].appearance_flags = NO_CLIENT_COLOR
+
+	var/image/natsf_team_hud = hud_list[NATSF_TEAM_HUD]
+	if(istype(job, /datum/job/natsf))
+		natsf_team_hud.icon_state = "ally"
+	else
+		natsf_team_hud.icon_state = "enemy"
+	hud_list[NATSF_TEAM_HUD].appearance_flags = NO_CLIENT_COLOR
 
 /datum/atom_hud/squad
 	hud_icons = list(SQUAD_HUD_TERRAGOV, MACHINE_HEALTH_HUD, MACHINE_AMMO_HUD)

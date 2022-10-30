@@ -171,3 +171,15 @@
 
 /obj/item/clothing/shoes/marine/clf/full
 	pockets = /obj/item/storage/internal/shoes/boot_knife/full
+
+/obj/item/clothing/shoes/marine/natsf
+	name = "NATSF boots"
+	desc = "Standard issue NATSF boots for every day use or combat situations. All combat, most of the the time."
+	icon_state = "marine"
+	item_state = "natsf_boots"
+
+/obj/item/clothing/shoes/marine/kosmnaz
+	name = "KOSMNAZ combat boots"
+	desc = "Standard issue KOSMNAZ combat boots for combat scenarios or combat situations. All combat, all the time."
+	icon_state = "marine" //Placeholder, NATSF too
+	item_state = "soviet_boots"

@@ -319,3 +319,37 @@
 	volume = 100
 
 	list_reagents = list(/datum/reagent/toxin/pain = 100)
+
+/obj/item/reagent_containers/hypospray/autoinjector/komsnazcoag
+	name = "KOSMNAZ blood cogulant autoinjector"
+	desc = "An auto-injector loaded with a healing blood coagulent, use when bleeding or recently shot. Has soviet markings."
+	amount_per_transfer_from_this = 15
+	volume = 15
+	icon_state = "kosmnaz_coag"
+	list_reagents = list(/datum/reagent/medicine/bicaridine = 15)
+
+/obj/item/reagent_containers/hypospray/autoinjector/kosmnazstim
+	name = "KOSMNAZ stimulant autoinjector"
+	desc = "An auto-injector freshly loaded with a medium strength painkiller and a minor healing chemical. Has soviet markings,"
+	amount_per_transfer_from_this = 15
+	volume = 15
+	icon_state = "kosmnaz_stim"
+	list_reagents = list(/datum/reagent/medicine/tramadol = 10,
+						/datum/reagent/medicine/tricordrazine = 5)
+
+/obj/item/reagent_containers/hypospray/autoinjector/natsfcoag
+	name = "NATSF blood cogulant autoinjector"
+	desc = "An auto-injector loaded with a healing blood coagulent, use when bleeding or recently shot. Has soviet markings."
+	amount_per_transfer_from_this = 15
+	volume = 15
+	icon_state = "natsf_coag"
+	list_reagents = list(/datum/reagent/medicine/bicaridine = 15)
+
+/obj/item/reagent_containers/hypospray/autoinjector/natsfstim
+	name = "NATSF stimulant autoinjector"
+	desc = "An auto-injector freshly loaded with a medium strength painkiller and a minor healing chemical. Has soviet markings,"
+	amount_per_transfer_from_this = 15
+	volume = 15
+	icon_state = "natsf_stim"
+	list_reagents = list(/datum/reagent/medicine/tramadol = 10,
+						/datum/reagent/medicine/tricordrazine = 5)

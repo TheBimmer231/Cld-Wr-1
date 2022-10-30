@@ -146,6 +146,16 @@
 	icon_state = "painoverlay"
 	layer = FULLSCREEN_PAIN_LAYER
 
+/obj/screen/fullscreen/thermals
+	icon_state = "thermals"
+	layer = FULLSCREEN_THERMALS_LAYER
+	alpha = 100
+
+/obj/screen/fullscreen/night_vision
+	icon_state = "night_vision"
+	layer = FULLSCREEN_NIGHT_VISION_LAYER
+	alpha = 100
+
 /obj/screen/fullscreen/bloodlust
 	icon_state = "bloodlust"
 	layer = FULLSCREEN_NERVES_LAYER
@@ -222,4 +232,12 @@
 	blend_mode = BLEND_ADD
 	show_when_dead = TRUE
 
+//Helmet effects for spacesuits
+
+/obj/screen/fullscreen/helmet
+	icon_state = "helmet"
+	plane = FULLSCREEN_PLANE
+	show_when_dead = TRUE
+
 #undef SHOULD_SHOW_TO
+

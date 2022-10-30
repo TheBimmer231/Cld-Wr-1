@@ -102,3 +102,9 @@
 	icon_state = "gloves_commissar"
 	item_state = "gloves_commissar"
 	soft_armor = list(MELEE = 35, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 15, BIO = 10, "rad" = 0, FIRE = 20, ACID = 20)
+
+/obj/item/clothing/gloves/marine/veteran/PMC/soviet
+	name = "marine combat gloves"
+	desc = "Standard issue KOSMNAZ tactical gloves."
+	icon_state = "gloves_marine"
+	item_state = "soviet_gloves"

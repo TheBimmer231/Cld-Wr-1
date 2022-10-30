@@ -149,3 +149,18 @@
 	desc = "A colored, resilient, and insulating cloth to cover your face from the elements. This one is colored Blueberry Blue."
 	icon_state = "delta_bandanna"
 	item_state = "delta_bandanna"
+
+//NATSF rebreather.
+/obj/item/clothing/mask/rebreather/natsf
+	name = "NATSF rebreather"
+	desc = "A rebreather used inside NATSF suits as the breathing device."
+	icon_state = "natorebreather"
+	item_state = "natorebreather"
+
+//KOSMNAZ gasmask
+
+/obj/item/clothing/mask/gas/soviet
+	name = "KOSMNAZ gas mask"
+	desc = "An old gasmask design modified a long time ago to work as a spacesuit worthy breathing mask."
+	icon_state = "sovietgasmask"
+	item_state = "sovietgasmask"

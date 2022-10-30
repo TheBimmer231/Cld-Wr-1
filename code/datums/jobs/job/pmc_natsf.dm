@@ -19,7 +19,7 @@
 /datum/outfit/job/natsf/soldier
 	name = "NATSF Soldier"
 	jobtype = /datum/job/natsf/soldier
-/*
+
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/marine
 	ears = /obj/item/radio/headset/natsf
@@ -32,7 +32,7 @@
 	l_store = /obj/item/storage/pouch/firstaid/coldwar/natsf/full
 	back = /obj/item/tank/jetpack/oxygen/combat/natsa
 	mask = /obj/item/clothing/mask/rebreather/natsf
-*/
+
 
 /datum/outfit/job/natsf/soldier/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
@@ -61,7 +61,7 @@
 	name = "NATSF Medic"
 	jobtype = /datum/job/natsf/medic
 
-/*
+
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/marine
 	ears = /obj/item/radio/headset/natsf
@@ -70,12 +70,12 @@
 	wear_suit = /obj/item/clothing/suit/space/soviet/natsf/light
 	gloves = /obj/item/clothing/gloves/marine/veteran/PMC
 	head = /obj/item/clothing/head/helmet/space/soviet/natsf/light
-	suit_store = /obj/item/weapon/gun/rifle/groza/ar15c
+//	suit_store = /obj/item/weapon/gun/rifle/groza/ar15c
 	l_store = /obj/item/storage/pouch/firstaid/coldmedic/natsf/full
 	r_store = /obj/item/storage/pouch/firstaid/coldmedic/natsf/full
 	back = /obj/item/tank/jetpack/oxygen/combat/natsa
 	mask = /obj/item/clothing/mask/rebreather/natsf
-*/
+
 
 /datum/outfit/job/natsf/medic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
